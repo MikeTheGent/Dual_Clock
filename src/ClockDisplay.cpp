@@ -15,10 +15,6 @@ namespace ClockDisplay {
         display.displayTime(99, 99);
     }
 
-    /*
-    ** Update the display to show the time. Arguments are assumed to be a valid time.
-    */
-
     void updateTime(const struct tm *clockTime) {
         display.displayTime(clockTime->tm_hour,clockTime->tm_min);
         display.setBlink(0);

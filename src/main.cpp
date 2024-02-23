@@ -4,20 +4,22 @@
 #include <Wire.h>
 #include "TimeSource.h"
 #include "ClockDisplay.h"
+#include "EnvironmentDisplay.h"
 
 void onTimeChange(const struct tm *clockTime);
 
 void setup() {
-    Wire.begin(17, 18);
+    Wire.begin();
     Serial.begin(115200);
-    TimeSource::begin(12, 11);
-    ClockDisplay::begin();
-    TimeSource::setTimeChangeCallback(onTimeChange);
+    EnvironmentDisplay::begin();
+    //TimeSource::begin(12, 11);
+    //ClockDisplay::begin();
+    //TimeSource::setTimeChangeCallback(onTimeChange);
 
 }
 
 void loop() {
-    TimeSource::parse();
+    //TimeSource::parse();
 }
 
 void onTimeChange(const struct tm *clockTime) {
