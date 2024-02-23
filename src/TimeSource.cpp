@@ -49,6 +49,7 @@ namespace TimeSource {
         while (gps->available() > 0) {
             byte gpsData = gps->read();
             parser.encode(gpsData);
+            Serial.write(gpsData);
         }
     }
 }
