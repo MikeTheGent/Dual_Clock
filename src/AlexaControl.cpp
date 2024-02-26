@@ -6,7 +6,6 @@
 namespace AlexaControl {
     namespace {
         fauxmoESP fauxmo;
-        bool initialised = false;
         displayChangeCallback onDisplayChange = NULL;
 
         /*
@@ -21,21 +20,20 @@ namespace AlexaControl {
         }
     }
 
+    void begin() {
+        fauxmo.createServer(true);
+        fauxmo.setPort(80);
+        fauxmo.enable(true);
+        fauxmo.addDevice("Red Clock");
+        fauxmo.onSetState(clockChanged);
+    }
+
+
     void setDisplayChangeCallback(displayChangeCallback callback) {
         onDisplayChange = callback;
     }
 
     void loop(void) {
-        if (! initialised) {
-            fauxmo.createServer(true);
-            fauxmo.setPort(80);
-            fauxmo.enable(true);
-            fauxmo.addDevice("Red Clock");
-            fauxmo.onSetState(clockChanged);
-            initialised = true;
-        }
-
         fauxmo.handle();
     }
 }
-
