@@ -20,10 +20,6 @@ namespace ClockDisplay {
         display.setBlink(0);
     }
 
-    /*
-    ** Switch the display on or off. If the display is on, adjust the brightness.
-    */
-
     void switchDisplay(bool state, unsigned char value) {
         if (state) {
             display.displayOn();

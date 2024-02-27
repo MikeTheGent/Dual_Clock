@@ -19,9 +19,15 @@ void setup() {
     Serial.begin(115200);
     ClockDisplay::begin();
     EnvironmentDisplay::begin();
-    connected = WiFiConnection::begin();
     TimeSource::begin(13, 15);
     TimeSource::setTimeChangeCallback(&onTimeChange);
+
+    /*
+    ** Connect WiFi after initialising everything else so the clock is working
+    ** while WiFi spends a few seconds connecting.
+    */
+
+    connected = WiFiConnection::begin();
 
     if (connected) {
         AlexaControl::begin();
@@ -34,6 +40,10 @@ void loop() {
 
     if (connected)
         AlexaControl::loop();
+
+    /*
+    ** If we haven't had a time update for 3 minutes, something's up.
+    */
 
     if (millis() > lastUpdate + 3000)
         ClockDisplay::indicateError();
