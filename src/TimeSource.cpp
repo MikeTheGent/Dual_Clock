@@ -24,7 +24,7 @@ namespace TimeSource {
                 struct tm *clockTime = localtime(&localSecs);
 
                 if (onTimeChange != NULL)
-                    (onTimeChange)(clockTime);
+                    (onTimeChange)(rmc.is_valid, clockTime);
             }
         }
 
