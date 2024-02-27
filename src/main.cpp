@@ -10,7 +10,7 @@
 #include "Sensors.h"
 
 void onTimeChange(bool isValid, const struct tm *clockTime);
-static bool connectWiFi();
+static bool connectWiFi(void);
 
 static unsigned long lastUpdate = 0;
 static bool connected = false;
@@ -20,9 +20,9 @@ void setup() {
     Serial.begin(115200);
     ClockDisplay::begin();
     EnvironmentDisplay::begin();
-    TimeSource::begin(13, 15);
-    TimeSource::setTimeChangeCallback(&onTimeChange);
     Sensors::begin();
+    TimeSource::begin(13, 15);
+    TimeSource::setTimeChangeCallback(onTimeChange);
 
     /*
     ** Connect WiFi after initialising everything else so the clock is working
