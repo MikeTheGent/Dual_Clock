@@ -7,6 +7,7 @@
 #include "AlexaControl.h"
 #include "TimeSource.h"
 #include "WiFiConnection.h"
+#include "Sensors.h"
 
 void onTimeChange(const struct tm *clockTime);
 static bool connectWiFi();
@@ -21,6 +22,7 @@ void setup() {
     EnvironmentDisplay::begin();
     TimeSource::begin(13, 15);
     TimeSource::setTimeChangeCallback(&onTimeChange);
+    Sensors::begin();
 
     /*
     ** Connect WiFi after initialising everything else so the clock is working
@@ -52,5 +54,8 @@ void loop() {
 void onTimeChange(const struct tm *clockTime) {
     ClockDisplay::updateTime(clockTime);
     lastUpdate = millis();
-}
 
+    EnvironmentDisplay::displayTemperature(Sensors::getTemperature());
+    EnvironmentDisplay::displayHumidity(Sensors::getHumidity());
+    EnvironmentDisplay::displayBrightness(Sensors::getBrightness());
+}

@@ -32,12 +32,12 @@ namespace EnvironmentDisplay {
         tft.setCursor(10, 114);
         tft.print("Light");
         tft.setCursor(10, 154);
-        tft.print("GPS Fixes");
+        tft.print("GPS Status");
 
         displayTemperature(23.5);
         displayHumidity(55);
-        displayLight(21.2);
-        displayFixes(4);
+        displayBrightness(21.2);
+        displayGpsStatus(false);
     }
 
     void displayTime(const struct tm *clockTime) {
@@ -58,23 +58,27 @@ namespace EnvironmentDisplay {
         tft.printf("%d%%", humidity);
     }
 
-    void displayLight(float light) {
+    void displayBrightness(float light) {
         tft.setTextColor(foregroundColour, backgroundColour);
         tft.setFreeFont(largeFont);
         tft.setCursor(220, 114);
         tft.printf("%.2f", light);
     }
 
-    void displayFixes(int fixes) {
+    void displayGpsStatus(bool gpsStatus) {
         tft.setTextColor(foregroundColour, backgroundColour);
         tft.setFreeFont(largeFont);
         tft.setCursor(220, 154);
-        tft.printf("%d", fixes);
+
+        if (gpsStatus)
+            tft.print("Valid");
+        else
+            tft.print("Invalid");
     }
     
-    void displayStatus(const char *message) {
+    void displayMessage(const char *message) {
     }
 
-    void clearStatus() {
+    void clearMessage() {
     }
 }
