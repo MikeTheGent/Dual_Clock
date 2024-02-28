@@ -16,7 +16,7 @@ namespace ClockDisplay {
     }
 
     void updateTime(const struct tm *clockTime) {
-        display.displayTime(clockTime->tm_hour,clockTime->tm_min);
+        display.displayTime(clockTime->tm_hour, clockTime->tm_min);
         display.setBlink(0);
     }
 
