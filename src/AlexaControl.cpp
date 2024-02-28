@@ -20,11 +20,11 @@ namespace AlexaControl {
         }
     }
 
-    void begin() {
+    void begin(const char *deviceName) {
         fauxmo.createServer(true);
         fauxmo.setPort(80);
         fauxmo.enable(true);
-        fauxmo.addDevice("Red Clock");
+        fauxmo.addDevice(deviceName);
         fauxmo.onSetState(clockChanged);
     }
 

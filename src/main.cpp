@@ -32,7 +32,7 @@ void setup() {
     connected = WiFiConnection::begin();
 
     if (connected) {
-        AlexaControl::begin();
+        AlexaControl::begin("Red Clock");
         AlexaControl::setDisplayChangeCallback(&ClockDisplay::switchDisplay);
     }
 }
