@@ -12,6 +12,7 @@
 void onTimeChange(bool isValid, const struct tm *clockTime);
 static bool connectWiFi(void);
 
+static const char *alexaDeviceName = "Dual Clock";
 static unsigned long lastUpdate = 0;
 static bool connected = false;
 
@@ -32,7 +33,7 @@ void setup() {
     connected = WiFiConnection::begin();
 
     if (connected) {
-        AlexaControl::begin("Red Clock");
+        AlexaControl::begin(alexaDeviceName);
         AlexaControl::setDisplayChangeCallback(&ClockDisplay::switchDisplay);
     }
 }
