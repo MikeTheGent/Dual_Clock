@@ -17,12 +17,14 @@ static unsigned long lastUpdate = 0;
 static bool connected = false;
 
 void setup() {
-    Wire.begin(12, 13);
     Serial.begin(115200);
+    Wire.begin(12, 13);
+
     ClockDisplay::begin();
     EnvironmentDisplay::begin();
     Sensors::begin();
-    TimeSource::begin(13, 15);
+
+    TimeSource::begin(44, 43);
     TimeSource::setTimeChangeCallback(onTimeChange);
 
     /*
@@ -43,14 +45,11 @@ void loop() {
     ** Only until TimeSource is implemented...
     */
 
-    if (millis() % 10000 == 0) {
-        EnvironmentDisplay::displayTemperature(Sensors::getTemperature());
-        EnvironmentDisplay::displayHumidity(Sensors::getHumidity());
-        EnvironmentDisplay::displayBrightness(Sensors::getBrightness());
+    if (millis() > lastUpdate + 10000) {
         struct tm clockTime;
         clockTime.tm_hour = rand() % 24;
         clockTime.tm_min = rand() % 60;
-        ClockDisplay::updateTime(&clockTime);
+        onTimeChange(true, &clockTime);
     }
 
     if (connected)
@@ -60,14 +59,15 @@ void loop() {
     TimeSource::loop();
 
     ** If we haven't had a time update for 3 minutes, something's wrong.
-
-    if (millis() > lastUpdate + 3000)
-        ClockDisplay::indicateError();
     */
+
+    if (millis() > lastUpdate + 180000)
+        ClockDisplay::indicateError();
 }
 
 void onTimeChange(bool isValid, const struct tm *clockTime) {
-    ClockDisplay::updateTime(clockTime);
+    ClockDisplay::displayTime(clockTime);
+    EnvironmentDisplay::displayTime(clockTime);
     lastUpdate = millis();
 
     EnvironmentDisplay::displayTemperature(Sensors::getTemperature());

@@ -10,12 +10,13 @@ namespace ClockDisplay {
 
     void begin(void) {
         display.begin();
-        switchDisplay(true, 1);
+        switchDisplay(true, 128);
         display.setBlink(3);
         display.displayTime(99, 99);
     }
 
-    void updateTime(const struct tm *clockTime) {
+    void displayTime(const struct tm *clockTime) {
+        Serial.println("displayTime");
         display.displayTime(clockTime->tm_hour, clockTime->tm_min);
         display.setBlink(0);
     }

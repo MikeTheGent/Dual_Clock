@@ -21,7 +21,7 @@ namespace EnvironmentDisplay {
 
         ledcSetup(backlightChannel, 5000, 8);
         ledcAttachPin(backlightPin, backlightChannel);
-        ledcWrite(backlightChannel, 8);
+        ledcWrite(backlightChannel, 64);
 
         tft.setTextColor(foregroundColour, backgroundColour);
         tft.setFreeFont(largeFont);
