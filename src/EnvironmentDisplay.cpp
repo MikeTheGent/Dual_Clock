@@ -11,7 +11,6 @@ namespace EnvironmentDisplay {
         const GFXfont *smallFont = &FreeSerif12pt7b;
         const uint8_t clockFont = 7;
         const uint16_t backgroundColour = TFT_BLACK;
-        const uint16_t foregroundColour = TFT_YELLOW;
     }
 
     void begin() {
@@ -23,16 +22,22 @@ namespace EnvironmentDisplay {
         ledcAttachPin(backlightPin, backlightChannel);
         ledcWrite(backlightChannel, 64);
 
-        tft.setTextColor(foregroundColour, backgroundColour);
         tft.setFreeFont(largeFont);
 
         tft.setCursor(10, 34);
+        tft.setTextColor(TFT_RED, backgroundColour);
         tft.print("Temperature");
+
         tft.setCursor(10, 74);
+        tft.setTextColor(TFT_ORANGE, backgroundColour);
         tft.print("Humidity");
+
         tft.setCursor(10, 114);
+        tft.setTextColor(TFT_YELLOW, backgroundColour);
         tft.print("Light");
+
         tft.setCursor(10, 154);
+        tft.setTextColor(TFT_GREEN, backgroundColour);
         tft.print("GPS Status");
 
         displayTemperature(0.0);
@@ -49,7 +54,7 @@ namespace EnvironmentDisplay {
 
     void displayTemperature(float temperature) {
         tft.fillRect(220, 9, 99, 34, backgroundColour);
-        tft.setTextColor(foregroundColour, backgroundColour);
+        tft.setTextColor(TFT_RED, backgroundColour);
         tft.setFreeFont(largeFont);
         tft.setCursor(220, 34);
         tft.printf("%.1f", temperature);
@@ -57,7 +62,7 @@ namespace EnvironmentDisplay {
     
     void displayHumidity(long humidity) {
         tft.fillRect(220, 49, 99, 34, backgroundColour);
-        tft.setTextColor(foregroundColour, backgroundColour);
+        tft.setTextColor(TFT_ORANGE, backgroundColour);
         tft.setFreeFont(largeFont);
         tft.setCursor(220, 74);
         tft.printf("%d%%", humidity);
@@ -65,7 +70,7 @@ namespace EnvironmentDisplay {
 
     void displayBrightness(long light) {
         tft.fillRect(220, 89, 99, 34, backgroundColour);
-        tft.setTextColor(foregroundColour, backgroundColour);
+        tft.setTextColor(TFT_YELLOW, backgroundColour);
         tft.setFreeFont(largeFont);
         tft.setCursor(220, 114);
         tft.printf("%d", light);
@@ -73,7 +78,7 @@ namespace EnvironmentDisplay {
 
     void displayGpsStatus(bool gpsStatus) {
         tft.fillRect(220, 129, 99, 34, backgroundColour);
-        tft.setTextColor(foregroundColour, backgroundColour);
+        tft.setTextColor(TFT_GREEN, backgroundColour);
         tft.setFreeFont(largeFont);
         tft.setCursor(220, 154);
 
@@ -84,7 +89,7 @@ namespace EnvironmentDisplay {
     }
     
     void displayMessage(const char *message) {
-        tft.setTextColor(foregroundColour, backgroundColour);
+        tft.setTextColor(TFT_WHITE, backgroundColour);
         tft.setFreeFont(smallFont);
 
         
