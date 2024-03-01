@@ -23,6 +23,7 @@ namespace Sensors {
     }
 
     long getBrightness() {
+        bh1750.start();
         return long(bh1750.getLux());
     }
 }

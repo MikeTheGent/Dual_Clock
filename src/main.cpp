@@ -4,7 +4,7 @@
 #include "ClockDisplay.h"
 #include "EnvironmentDisplay.h"
 #include "AlexaControl.h"
-//#include "TimeSource.h"
+#include "TimeSource.h"
 #include "WiFiConnection.h"
 #include "Sensors.h"
 
@@ -22,8 +22,8 @@ void setup() {
     ClockDisplay::begin();
     EnvironmentDisplay::begin();
     Sensors::begin();
-    //TimeSource::begin(13, 15);
-    //TimeSource::setTimeChangeCallback(onTimeChange);
+    TimeSource::begin(13, 15);
+    TimeSource::setTimeChangeCallback(onTimeChange);
 
     /*
     ** Connect WiFi after initialising everything else so the clock is working
