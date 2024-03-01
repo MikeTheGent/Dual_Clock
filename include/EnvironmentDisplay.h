@@ -10,4 +10,5 @@ namespace EnvironmentDisplay {
     void displayGpsStatus(bool gpsStatus);
     void displayMessage(const char *message);
     void clearMessage(void);
+    void switchDisplay(bool state, unsigned char value);
 }

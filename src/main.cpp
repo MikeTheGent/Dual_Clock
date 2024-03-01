@@ -31,7 +31,6 @@ void setup() {
     */
 
     connected = WiFiConnection::begin("DualClock", "DualPassword");
-    Serial.printf("Connected: %d\n", connected);
 
     if (connected) {
         AlexaControl::begin(alexaDeviceName);
@@ -79,7 +78,7 @@ void onTimeChange(bool isValid, const struct tm *clockTime) {
 
 void onDisplayChange(bool state, unsigned char value) {
     Serial.printf("Display state: %d, value %d\n", state, value);
-    //EnvironmentDisplay::
+    EnvironmentDisplay::switchDisplay(state, value);
     ClockDisplay::switchDisplay(state, value);
 }
 

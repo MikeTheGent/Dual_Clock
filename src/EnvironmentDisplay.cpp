@@ -92,4 +92,13 @@ namespace EnvironmentDisplay {
 
     void clearMessage() {
     }
+
+    void switchDisplay(bool state, unsigned char value) {
+        if (state) {
+            ledcWrite(backlightChannel, map(value, 1, 254, 1, 255));
+        }
+        else {
+            ledcWrite(backlightChannel, 0);
+        }
+    }
 }

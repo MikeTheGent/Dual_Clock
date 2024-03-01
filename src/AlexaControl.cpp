@@ -28,7 +28,6 @@ namespace AlexaControl {
         fauxmo.onSetState(clockChanged);
     }
 
-
     void setDisplayChangeCallback(displayChangeCallback callback) {
         onDisplayChange = callback;
     }
