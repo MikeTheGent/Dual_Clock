@@ -23,7 +23,7 @@ namespace ClockDisplay {
     void switchDisplay(bool state, unsigned char value) {
         if (state) {
             display.displayOn();
-            display.brightness(map(value, 1, 100, 0, 15));
+            display.brightness(map(value, 4, 254, 0, 15));
         }
         else {
             display.displayOff();

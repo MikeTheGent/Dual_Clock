@@ -2,6 +2,7 @@
 #pragma once
 
 namespace WiFiConnection {
-    bool begin();
+    bool begin(const char *name, const char *password);
     bool isConnected();
 }
+

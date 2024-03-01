@@ -45,7 +45,7 @@ namespace TimeSource {
         onTimeChange = callback;
     }
 
-    void parse(void) {
+    void loop(void) {
         while (gps->available() > 0) {
             byte gpsData = gps->read();
             parser.encode(gpsData);
