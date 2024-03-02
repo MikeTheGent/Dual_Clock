@@ -1,6 +1,6 @@
 
 #include <Arduino.h>
-#include <SoftwareSerial.h>
+#include <HardwareSerial.h>
 #include <ArduinoNmeaParser.h>
 #include <Timezone.h>
 #include "TimeSource.h"
@@ -11,7 +11,7 @@ namespace TimeSource {
         TimeChangeRule gmtRule = {"GMT", Last, Sun, Oct, 2, 0};
         Timezone UK(bstRule, gmtRule);
 
-        SoftwareSerial *gps;
+        HardwareSerial gps(1);
         timeChangeCallback onTimeChange = NULL;
 
         void onRmcUpdate(const nmea::RmcData rmc) {
@@ -35,10 +35,9 @@ namespace TimeSource {
     }
 
     void begin(int8_t rxPin, int8_t txPin) {
-        gps = new SoftwareSerial(rxPin, txPin);
-        gps->begin(9600);
-        gps->write("$PMTK220,1000*1F\r\n");
-        gps->write("$PMTK314,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0*29\r\n");
+        gps.begin(9600, SERIAL_8N1, rxPin, txPin);
+        gps.write("$PMTK220,1000*1F\r\n");
+        gps.write("$PMTK314,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0*29\r\n");
     }
 
     void setTimeChangeCallback(timeChangeCallback callback) {
@@ -46,10 +45,9 @@ namespace TimeSource {
     }
 
     void loop(void) {
-        while (gps->available() > 0) {
-            byte gpsData = gps->read();
+        while (gps.available() > 0) {
+            byte gpsData = gps.read();
             parser.encode(gpsData);
-            Serial.write(gpsData);
         }
     }
 }

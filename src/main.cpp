@@ -24,7 +24,7 @@ void setup() {
     EnvironmentDisplay::begin();
     Sensors::begin();
 
-    TimeSource::begin(44, 43);
+    TimeSource::begin(7, 8);
     TimeSource::setTimeChangeCallback(onTimeChange);
 
     /*
@@ -43,7 +43,6 @@ void setup() {
 void loop() {
     /*
     ** Only until TimeSource is implemented...
-    */
 
     if (millis() > lastUpdate + 10000) {
         struct tm clockTime;
@@ -51,18 +50,21 @@ void loop() {
         clockTime.tm_min = rand() % 60;
         onTimeChange(true, &clockTime);
     }
+    */
 
     if (connected)
         AlexaControl::loop();
 
-    /*
     TimeSource::loop();
 
+    /*
     ** If we haven't had a time update for 3 minutes, something's wrong.
     */
 
-    if (millis() > lastUpdate + 180000)
-        ClockDisplay::indicateError();
+    if (millis() > lastUpdate + 180000) {
+        ClockDisplay::displayError(8);
+        EnvironmentDisplay::displayMessage("No GPS time received");
+    }
 }
 
 void onTimeChange(bool isValid, const struct tm *clockTime) {

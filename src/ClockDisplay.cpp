@@ -31,8 +31,8 @@ namespace ClockDisplay {
         }
     }
 
-    void indicateError() {
+    void displayError(int errorCode) {
         display.setBlink(3);
-        display.displayTime(88, 88);
+        display.displayTime(errorCode * 11, errorCode * 11);
     }
 }

@@ -89,7 +89,7 @@ namespace EnvironmentDisplay {
     }
     
     void displayMessage(const char *message) {
-        tft.setTextColor(TFT_WHITE, backgroundColour);
+        tft.setTextColor(TFT_RED, TFT_WHITE);
         tft.setFreeFont(smallFont);
 
         

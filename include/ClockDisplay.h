@@ -6,5 +6,5 @@ namespace ClockDisplay {
     void displayTime(const struct tm *clockTime);
     void adjustBrightness(short brightness);
     void switchDisplay(bool state, unsigned char value);
-    void indicateError();
+    void displayError(int errorCode);
 }
