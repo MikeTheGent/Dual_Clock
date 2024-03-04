@@ -10,11 +10,16 @@
 
 void onTimeChange(bool isValid, const struct tm *clockTime);
 void onDisplayChange(bool state, unsigned char value);
-static bool connectWiFi(void);
+void IRAM_ATTR onEnvironmentTimer(void);
+static void updateEnvironment(void);
 
 static const char *alexaDeviceName = "Dual Clock";
 static unsigned long lastUpdate = 0;
 static bool connected = false;
+
+static volatile bool updateRequested;
+hw_timer_t *environmentTimer = NULL;
+portMUX_TYPE timerMux = portMUX_INITIALIZER_UNLOCKED;
 
 void setup() {
     Serial.begin(115200);
@@ -26,6 +31,16 @@ void setup() {
 
     TimeSource::begin(7, 8);
     TimeSource::setTimeChangeCallback(onTimeChange);
+
+    /*
+    ** Timer to update the environment display periodically.
+    */
+
+    updateEnvironment();
+    environmentTimer = timerBegin(0, 80, true);
+    timerAttachInterrupt(environmentTimer, &onEnvironmentTimer, true);
+    timerAlarmWrite(environmentTimer, 5000000, true);
+    timerAlarmEnable(environmentTimer);
 
     /*
     ** Connect WiFi after initialising everything else so the clock is working
@@ -41,6 +56,9 @@ void setup() {
 }
 
 void loop() {
+    if (updateRequested)
+        updateEnvironment();
+
     if (connected)
         AlexaControl::loop();
 
@@ -60,16 +78,29 @@ void onTimeChange(bool isValid, const struct tm *clockTime) {
     ClockDisplay::displayTime(clockTime);
     EnvironmentDisplay::displayTime(clockTime);
     lastUpdate = millis();
-
-    EnvironmentDisplay::displayTemperature(Sensors::getTemperature());
-    EnvironmentDisplay::displayHumidity(Sensors::getHumidity());
-    EnvironmentDisplay::displayBrightness(Sensors::getBrightness());
     EnvironmentDisplay::displayGpsStatus(isValid);
+}
+
+/*
+** ISR for the environment sensor timer. Don't attempt any IO here, just set a flag
+** to request the update.
+*/
+
+void IRAM_ATTR onEnvironmentTimer() {
+    portENTER_CRITICAL_ISR(&timerMux);
+    updateRequested = true;
+    portEXIT_CRITICAL_ISR(&timerMux);
 }
 
 void onDisplayChange(bool state, unsigned char value) {
     Serial.printf("Display state: %d, value %d\n", state, value);
     EnvironmentDisplay::switchDisplay(state, value);
     ClockDisplay::switchDisplay(state, value);
+}
+
+static void updateEnvironment() {
+    EnvironmentDisplay::displayTemperature(Sensors::getTemperature());
+    EnvironmentDisplay::displayHumidity(Sensors::getHumidity());
+    EnvironmentDisplay::displayBrightness(Sensors::getBrightness());
 }
 
