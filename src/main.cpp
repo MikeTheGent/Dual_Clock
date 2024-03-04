@@ -41,17 +41,6 @@ void setup() {
 }
 
 void loop() {
-    /*
-    ** Only until TimeSource is implemented...
-
-    if (millis() > lastUpdate + 10000) {
-        struct tm clockTime;
-        clockTime.tm_hour = rand() % 24;
-        clockTime.tm_min = rand() % 60;
-        onTimeChange(true, &clockTime);
-    }
-    */
-
     if (connected)
         AlexaControl::loop();
 
