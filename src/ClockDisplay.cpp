@@ -16,7 +16,6 @@ namespace ClockDisplay {
     }
 
     void displayTime(const struct tm *clockTime) {
-        Serial.println("displayTime");
         display.displayTime(clockTime->tm_hour, clockTime->tm_min);
         display.setBlink(0);
     }

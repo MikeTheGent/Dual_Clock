@@ -17,6 +17,10 @@ static const char *alexaDeviceName = "Dual Clock";
 static unsigned long lastUpdate = 0;
 static bool connected = false;
 
+/*
+** For the environment sensor timer:
+*/
+
 static volatile bool updateRequested;
 hw_timer_t *environmentTimer = NULL;
 portMUX_TYPE timerMux = portMUX_INITIALIZER_UNLOCKED;
@@ -33,7 +37,7 @@ void setup() {
     TimeSource::setTimeChangeCallback(onTimeChange);
 
     /*
-    ** Timer to update the environment display periodically.
+    ** Timer to update the environment display periodically. NOT TESTED YET.
     */
 
     updateEnvironment();
@@ -93,7 +97,6 @@ void IRAM_ATTR onEnvironmentTimer() {
 }
 
 void onDisplayChange(bool state, unsigned char value) {
-    Serial.printf("Display state: %d, value %d\n", state, value);
     EnvironmentDisplay::switchDisplay(state, value);
     ClockDisplay::switchDisplay(state, value);
 }
