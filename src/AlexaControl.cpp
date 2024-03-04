@@ -12,7 +12,7 @@ namespace AlexaControl {
         ** Callback when fauxmoESP receives an Alexa command for this device.
         */
 
-        void clockChanged(unsigned char deviceId, const char *deviceName,
+        void alexaCallback(unsigned char deviceId, const char *deviceName,
                 bool state, unsigned char value) {
 
             if (onDisplayChange != NULL)
@@ -25,7 +25,7 @@ namespace AlexaControl {
         fauxmo.setPort(80);
         fauxmo.enable(true);
         fauxmo.addDevice(deviceName);
-        fauxmo.onSetState(clockChanged);
+        fauxmo.onSetState(alexaCallback);
     }
 
     void setDisplayChangeCallback(displayChangeCallback callback) {
