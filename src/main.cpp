@@ -29,9 +29,7 @@ void setup() {
     ClockDisplay::begin();
     EnvironmentDisplay::begin();
     Sensors::begin();
-
     TimeSource::begin(gpsRxPin, gpsTxPin, onTimeChange);
-    updateEnvironment();
 
     /*
     ** Connect WiFi after initialising everything else so the clock is working
@@ -70,8 +68,8 @@ void loop() {
 void onTimeChange(bool isValid, const struct tm *clockTime) {
     ClockDisplay::displayTime(clockTime);
     EnvironmentDisplay::displayTime(clockTime);
-    lastTimeUpdate = millis();
     EnvironmentDisplay::displayGpsStatus(isValid);
+    lastTimeUpdate = millis();
 }
 
 void onDisplayChange(bool state, unsigned char value) {
