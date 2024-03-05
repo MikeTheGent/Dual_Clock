@@ -10,8 +10,12 @@
 
 void onTimeChange(bool isValid, const struct tm *clockTime);
 void onDisplayChange(bool state, unsigned char value);
-void IRAM_ATTR onEnvironmentTimer(void);
 static void updateEnvironment(void);
+
+static const uint8_t gpsRxPin = 7;
+static const uint8_t gpsTxPin = 8;
+static const int i2cSDA = 12;
+static const int i2cSCL = 13;
 
 static const char *alexaDeviceName = "Dual Clock";
 static unsigned long lastTimeUpdate = 0;
@@ -20,14 +24,15 @@ static bool connected = false;
 
 void setup() {
     Serial.begin(115200);
-    Wire.begin(12, 13);
+    Wire.begin(i2cSDA, i2cSCL);
 
     ClockDisplay::begin();
     EnvironmentDisplay::begin();
     Sensors::begin();
 
-    TimeSource::begin(7, 8);
+    TimeSource::begin(gpsRxPin, gpsTxPin);
     TimeSource::setTimeChangeCallback(onTimeChange);
+    updateEnvironment();
 
     /*
     ** Connect WiFi after initialising everything else so the clock is working
@@ -37,8 +42,7 @@ void setup() {
     connected = WiFiConnection::begin("DualClock", "DualPassword");
 
     if (connected) {
-        AlexaControl::begin(alexaDeviceName);
-        AlexaControl::setDisplayChangeCallback(onDisplayChange);
+        AlexaControl::begin(alexaDeviceName, onDisplayChange);
     }
 }
 
@@ -48,8 +52,9 @@ void loop() {
         nextSensorUpdate = millis() + 10000;
     }
 
-    if (connected)
+    if (connected) {
         AlexaControl::loop();
+    }
 
     TimeSource::loop();
 
