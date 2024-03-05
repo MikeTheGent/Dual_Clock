@@ -34,13 +34,10 @@ namespace TimeSource {
         ArduinoNmeaParser parser(onRmcUpdate, onGgaUpdate);
     }
 
-    void begin(int8_t rxPin, int8_t txPin) {
+    void begin(int8_t rxPin, int8_t txPin, timeChangeCallback callback) {
         gps.begin(9600, SERIAL_8N1, rxPin, txPin);
         gps.write("$PMTK220,1000*1F\r\n");
         gps.write("$PMTK314,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0*29\r\n");
-    }
-
-    void setTimeChangeCallback(timeChangeCallback callback) {
         onTimeChange = callback;
     }
 

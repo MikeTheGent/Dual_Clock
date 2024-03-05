@@ -30,8 +30,7 @@ void setup() {
     EnvironmentDisplay::begin();
     Sensors::begin();
 
-    TimeSource::begin(gpsRxPin, gpsTxPin);
-    TimeSource::setTimeChangeCallback(onTimeChange);
+    TimeSource::begin(gpsRxPin, gpsTxPin, onTimeChange);
     updateEnvironment();
 
     /*
