@@ -34,11 +34,12 @@ The code is written in, and designed for, vscode & PlatformIO. A bit of moving &
 renaming of main.cpp would probably be all that's needed to compile it in Arduino IDE. 
 But why?
 
-## Hardware
+platformio.ini is configured for an adafruit_feather_esp32s3 which is the closest
+I could find to the spec of my Waveshare ESP32 S3 Zero. These boards both have 4Mb RAM
+unlike other S3 boards which have 8Mb. It took a while to figure out why the MCU
+was crashing.
 
-In UK I buy parts from thepihut.com and eBay. The ClosedCube HDC1080 might be difficult
-to source outside UK and can be easily substituted with other I2C sensors. Just avoid the
-hopelessly inaccurate DHT11.
+## Parts
 
 1. Waveshare ESP32 S3 Zero
 2. Neo 7M GPS receiver, external antenna option useful to get a signal indoors
@@ -49,9 +50,13 @@ hopelessly inaccurate DHT11.
 7. Adafruit Perma-Proto Small Mint Tin Size Breadboard PCB
 8. Female headers
 
+In UK I buy parts from thepihut.com and eBay. The ClosedCube HDC1080 might be difficult
+to source outside UK and can be easily substituted with other I2C sensors. Just avoid the
+hopelessly inaccurate DHT11. Edit Sensors.cpp to suit your sensor.
+
 ## WiFi & Alexa
 
-Uses the WiFiManager library to get WiFi credentials obviating the need for hard 
+Dual Clock the WiFiManager library to get WiFi credentials obviating the need for hard 
 coded SSID & password.
 
 By default, the clock connects to WiFi and emulates a Phillips bulb using the fauxmoESP
@@ -60,7 +65,7 @@ feature can be easily removed in main.cpp.
 
 ## Case
 
-I have designed & prototyped  a 3D printed open frame case. I will upload files 
+I have designed & prototyped a 3D printed open frame case. I will upload files 
 here once I have completed my clock and am satisfied the case has room for everything.
 
 ## TFT_eSPI configutation
