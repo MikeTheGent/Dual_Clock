@@ -20,7 +20,6 @@ static const int i2cSCL = 13;
 static const char *alexaDeviceName = "Dual Clock";
 static unsigned long lastTimeUpdate = 0;
 static unsigned long nextSensorUpdate = 0;
-static bool connected = false;
 
 void setup() {
     Serial.begin(115200);
@@ -36,9 +35,7 @@ void setup() {
     ** while WiFi spends a few seconds connecting.
     */
 
-    connected = WiFiConnection::begin("DualClock", "DualPassword");
-
-    if (connected) {
+    if (WiFiConnection::begin("DualClock", "DualPassword")) {
         AlexaControl::begin(alexaDeviceName, onDisplayChange);
     }
 }
@@ -49,7 +46,7 @@ void loop() {
         nextSensorUpdate = millis() + 10000;
     }
 
-    if (connected) {
+    if (WiFiConnection::isConnected()) {
         AlexaControl::loop();
     }
 
