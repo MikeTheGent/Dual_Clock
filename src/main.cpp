@@ -12,6 +12,10 @@ void onTimeChange(bool isValid, const struct tm *clockTime);
 void onDisplayChange(bool state, unsigned char value);
 static void updateEnvironment(void);
 
+/*
+** Pins used for GPS Serial and I2C for other peripherals.
+*/
+
 static const uint8_t gpsRxPin = 7;
 static const uint8_t gpsTxPin = 8;
 static const int i2cSDA = 12;

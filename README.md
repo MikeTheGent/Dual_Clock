@@ -22,9 +22,17 @@
 
  Much more info to follow. Questions welcome.
 
-## Compiling
+## Code
 
-The code is written in, and designed for, vscode & PlatformIO. 
+As an experiment, I implemented everything using namespaces instead of classes. I'd
+hear some harsh criticism of OOP and wanted to experiment with the alternatives. I
+actually prefer this approach when there is only going to one instance of a thing.
+The code seems to be shorter and easier to understand. Each namespace is isolated
+from the others -- everything is tied together in main.cpp.
+
+The code is written in, and designed for, vscode & PlatformIO. A bit of moving &
+renaming of main.cpp would probably be all that's needed to compile it in Arduino IDE. 
+But why?
 
 ## Hardware
 
@@ -35,6 +43,7 @@ HT16K33 4 digit LED display
 BH1750 light sensor (currently does nothing)
 ClosedCube HDC1080 temperature & humidity sensor. Alternatives would be easy to implement.
 Adafruit Perma-Proto Small Mint Tin Size Breadboard PCB
+Female headers
 
 ## Alexa control
 
