@@ -36,8 +36,8 @@ But why?
 
 ## Hardware
 
-In UK I buy parts from thepihut.com and eBay. The ClosedCube HDC1080 may not be easily
-sourced outside UK and can be easily substituted with other I2C sensors. Just avoid the
+In UK I buy parts from thepihut.com and eBay. The ClosedCube HDC1080 might be difficult
+to source outside UK and can be easily substituted with other I2C sensors. Just avoid the
 hopelessly inaccurate DHT11.
 
 1. Waveshare ESP32 S3 Zero
