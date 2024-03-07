@@ -34,6 +34,7 @@ HT16K33 4 digit LED display
 320x170 TFT display
 BH1750 light sensor (currently does nothing)
 ClosedCube HDC1080 temperature & humidity sensor. Alternatives would be easy to implement.
+Adafruit Perma-Proto Small Mint Tin Size Breadboard PCB
 
 ## Alexa control
 
@@ -45,3 +46,8 @@ feature can be easily removed in main.cpp.
 
 Uses the WiFiManager library to get WiFi credentials obviating the need for hard 
 coded password.
+
+## Case
+
+I have a 3D printed open frame case. I will upload files here once I have completed
+my clock and am satisfied the case has room for everything.
