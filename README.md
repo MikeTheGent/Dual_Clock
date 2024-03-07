@@ -17,7 +17,7 @@
  Many mods are possible to suit different hardware.
 
  The version I am building uses a Waveshare ESP32 S3 Zero MCU. This is slight
- overkill, but it a nice smallpackage. The code could probably be made to work
+ overkill, but it a nice small package. The code could probably be made to work
  in a much cheaper D1 Mini with an ESP8266.
 
  Much more info to follow. Questions welcome.
@@ -25,9 +25,9 @@
 ## Code
 
 As an experiment, I implemented everything using namespaces instead of classes. I'd
-hear some harsh criticism of OOP and wanted to experiment with the alternatives. I
+heard some harsh criticism of OOP and wanted to experiment with the alternatives. I
 actually prefer this approach when there is only going to one instance of a thing.
-The code seems to be shorter and easier to understand. Each namespace is isolated
+The code seems to be shorter and easier to understand. Each namespace is decoupled
 from the others -- everything is tied together in main.cpp.
 
 The code is written in, and designed for, vscode & PlatformIO. A bit of moving &
