@@ -56,7 +56,7 @@ hopelessly inaccurate DHT11. Edit Sensors.cpp to suit your sensor.
 
 ## WiFi & Alexa
 
-Dual Clock the WiFiManager library to get WiFi credentials obviating the need for hard 
+Dual Clock uses the WiFiManager library to get WiFi credentials obviating the need for hard 
 coded SSID & password.
 
 By default, the clock connects to WiFi and emulates a Phillips bulb using the fauxmoESP
