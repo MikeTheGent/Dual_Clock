@@ -1,3 +1,8 @@
+/*
+** WiFi connection manager. Uses the WiFiConnection library to avoid having hard coded
+** WiFi credentials. The WiFi connection is used by the Alexa Control and could be
+** omitted if that is not required.
+*/
 
 #include <WiFiManager.h>
 #include "WiFiConnection.h"

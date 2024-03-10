@@ -1,3 +1,7 @@
+/*
+** Clock display -- probably sometime big enough to be seen across a typical 
+** living room. Originally designed to use a 4x7 segment display driven by a HT16K33.
+*/
 
 #include <Arduino.h>
 #include <HT16K33.h>

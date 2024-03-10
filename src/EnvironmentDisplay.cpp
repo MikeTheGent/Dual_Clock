@@ -1,3 +1,6 @@
+/*
+** Display for environment information -- tempertaure, humidity etc.
+*/
 
 #include <TFT_eSPI.h>
 #include "EnvironmentDisplay.h"

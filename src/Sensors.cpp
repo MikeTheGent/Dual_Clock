@@ -1,3 +1,8 @@
+/*
+** Environment sensors. Eg, temperature, humidity, light level. Originally designed
+** to use a BH1750 light sensor & ClosedCube HDC1080 temperature & humidity sensor.
+** Either of these can be substituted with appropriate alternatives.
+*/
 
 #include <hp_BH1750.h>
 #include <ClosedCube_HDC1080.h>

@@ -66,6 +66,10 @@ void loop() {
     }
 }
 
+/*
+** Callback from TimeSource when a time change happens. Update the clock displays.
+*/
+
 void onTimeChange(bool isValid, const struct tm *clockTime) {
     ClockDisplay::displayTime(clockTime);
     EnvironmentDisplay::displayTime(clockTime);
@@ -73,10 +77,18 @@ void onTimeChange(bool isValid, const struct tm *clockTime) {
     lastTimeUpdate = millis();
 }
 
+/*
+** Callback from AlexaControl when the device status changes.
+*/
+
 void onDisplayChange(bool state, unsigned char value) {
     EnvironmentDisplay::switchDisplay(state, value);
     ClockDisplay::switchDisplay(state, value);
 }
+
+/*
+** Update the environment display.
+*/
 
 static void updateEnvironment() {
     EnvironmentDisplay::displayTemperature(Sensors::getTemperature());
