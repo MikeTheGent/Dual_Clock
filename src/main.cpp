@@ -1,3 +1,12 @@
+/*
+** Dual Clock is a digital clock with 2 displays -- one larger intended to be read
+** from across a typical living room, the other a small TFT to display environment
+** information. Receives atomic clock time from a GPS module.
+**
+** This module initialises everything and connects up the other modules.
+**
+** (C) 2024, Mike Wilson. MIT License -- see LICENSE file included in the distribution.
+*/
 
 #include <Arduino.h>
 #include <Wire.h>

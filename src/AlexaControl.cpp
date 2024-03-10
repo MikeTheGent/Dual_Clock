@@ -4,6 +4,8 @@
 ** turning off the GPS receiver. If Alexa control isn't required, this module &
 ** the WiFi Connection module can probably be removed -- I haven't tested this, but
 ** I believe it would be a trivial change.
+**
+** (C) 2024, Mike Wilson. MIT License -- see LICENSE file included in the distribution.
 */
 
 #include <Arduino.h>

@@ -2,6 +2,8 @@
 ** Source of accurate time. Uses a GPS receiver to get the time from an atomic clock,
 ** so probably the most accurate time avaiable to the public. The time received will 
 ** be UTC and can be converted to local time by editing the time change rules below.
+**
+** (C) 2024, Mike Wilson. MIT License -- see LICENSE file included in the distribution.
 */
 
 #include <Arduino.h>

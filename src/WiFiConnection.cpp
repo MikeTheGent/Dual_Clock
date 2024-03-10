@@ -2,6 +2,8 @@
 ** WiFi connection manager. Uses the WiFiConnection library to avoid having hard coded
 ** WiFi credentials. The WiFi connection is used by the Alexa Control and could be
 ** omitted if that is not required.
+**
+** (C) 2024, Mike Wilson. MIT License -- see LICENSE file included in the distribution.
 */
 
 #include <WiFiManager.h>

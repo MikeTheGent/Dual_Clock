@@ -1,5 +1,7 @@
 /*
 ** Display for environment information -- tempertaure, humidity etc.
+**
+** (C) 2024, Mike Wilson. MIT License -- see LICENSE file included in the distribution.
 */
 
 #include <TFT_eSPI.h>

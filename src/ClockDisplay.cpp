@@ -1,6 +1,8 @@
 /*
 ** Clock display -- probably sometime big enough to be seen across a typical 
 ** living room. Originally designed to use a 4x7 segment display driven by a HT16K33.
+**
+** (C) 2024, Mike Wilson. MIT License -- see LICENSE file included in the distribution.
 */
 
 #include <Arduino.h>
