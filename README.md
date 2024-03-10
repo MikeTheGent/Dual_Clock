@@ -41,8 +41,7 @@ was crashing.
 
 ## Parts
 
-[A detailed parts list](https://github.com/MikeTheGent/Dual_Clock/resources/parts.md)
-
+[A detailed parts list](https://github.com/MikeTheGent/Dual_Clock/blob/main/resources/parts.md)
 
 ## WiFi & Alexa
 
