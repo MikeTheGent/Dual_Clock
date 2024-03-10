@@ -1,4 +1,8 @@
 
+/*
+** TFT_eSPI user setup for 1.9" 170x320 TFT display.
+*/
+
 #define USER_SETUP_ID 999
 
 #define ST7789_DRIVER

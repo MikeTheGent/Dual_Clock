@@ -11,9 +11,6 @@
 
  The time zone info in TimeSource.cpp can be edited to suit different time zones.
 
- I have designed a 3D printed open frame case for the clock. STL files will be
- available later.
-
  Many mods are possible to suit different hardware.
 
  The version I am building uses a Waveshare ESP32 S3 Zero MCU. This is slight
@@ -58,8 +55,9 @@ feature can be easily removed in main.cpp.
 
 ![Dual Clock Case](https://github.com/MikeTheGent/Dual_Clock/blob/main/resources/Dual_Clock_case_2.jpeg "Dual Clock Case")
 
-I resin printed these. The files can be modified to suit different parts using any
-3D design application than can import an STL file.
+I resin printed these in Sunlu ABS-Like. The files can be modified to suit different 
+parts using any 3D design application than can import an STL file. They can
+probably be easily adapted for FDM printing.
 
 [Case Sides](https://github.com/MikeTheGent/Dual_Clock/blob/main/resources/Dual_Clock_Case_Sides.stl)
 
