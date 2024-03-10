@@ -58,8 +58,11 @@ feature can be easily removed in main.cpp.
 
 ![Dual Clock Case](https://github.com/MikeTheGent/Dual_Clock/blob/main/resources/Dual_Clock_case_2.jpeg "Dual Clock Case")
 
-I have designed & prototyped a 3D printed open frame case. I will upload files 
-here once I have completed my clock and am satisfied the case has room for everything.
+I resin printed these. The files can be modified to suit different parts using any
+3D design application than can import an STL file.
+
+[Case Sides](https://github.com/MikeTheGent/Dual_Clock/blob/main/resources/Dual_Clock_Case_Sides.stl)
+[Case Back](https://github.com/MikeTheGent/Dual_Clock/blob/main/resources/Dual_Clock_Case_Back.stl)
 
 The case will need to be modified if you're not using exactly the same parts as me. (See 'Parts' above).
 
