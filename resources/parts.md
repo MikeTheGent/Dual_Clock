@@ -4,7 +4,8 @@
 
 1. In the UK, [The Pi Hut](https://thepihut.com/)
 2. eBay
-3. [Aliexpress](https://www.aliexpress.com/) if you dare.
+3. [Aliexpress](https://www.aliexpress.com/) if you dare
+4. Amazon, although usually more expensive for small parts
 
 ## Waveshare ESP32 S3 Zero
 
@@ -16,7 +17,8 @@ are widely available.
 
 ## Neo 7M GPS receiver
 
-External antenna option useful to get a signal indoors.
+External antenna option useful to get a signal indoors. A compatible antenna will
+probably be abailable from eBay.
 
 ## HT16K33 4 digit LED display
 
@@ -24,7 +26,8 @@ Available from the usual suspects including eBay.
 
 ## 1.9", 170x320 pixel TFT display
 
-Available from Aliexpress & eBay.
+Available from Aliexpress & eBay. Other similar sized displays might work. If you're 
+not using the same part as me, you will need to edit User_Setup.h to suit.
 
 ## BH1750 light sensor
 
@@ -34,6 +37,8 @@ Available from eBay in UK. Might be difficult to source outside UK and can be ea
 Edit Sensors.cpp to suit your sensor.
 
 ## Adafruit Perma-Proto Small Mint Tin Size Breadboard PCB
+
+Other solderable breadboards can be substituted.
 
 ## Female headers
 
