@@ -67,6 +67,6 @@ I resin printed these. The files can be modified to suit different parts using a
 
 ## TFT_eSPI configutation
 
-Move docs/User_Setup.h to your TFT_eSPI directory which will be somwhere in .pio/libdeps.
-You will need to edit this file to suit your MCU & TFT unless you are using exactly 
-the same devices as me.
+Move resources/User_Setup.h to your TFT_eSPI directory which will be somwhere in 
+.pio/libdeps. You will need to edit this file to suit your MCU & TFT unless you 
+are using exactly the same devices as me.
