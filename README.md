@@ -65,6 +65,9 @@ feature can be easily removed in main.cpp.
 
 ## Case
 
+!(resources/Dual_Clock_case_1.jpg "Dual Clock Case")
+
+
 I have designed & prototyped a 3D printed open frame case. I will upload files 
 here once I have completed my clock and am satisfied the case has room for everything.
 
