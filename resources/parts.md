@@ -44,3 +44,7 @@ Other solderable breadboards can be substituted.
 
 ## 10cm/4" Male to Female DuPont cables
 
+## No2 x 13mm self tapping screws
+
+If you're using my case design.
+

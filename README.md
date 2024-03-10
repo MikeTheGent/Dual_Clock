@@ -62,9 +62,8 @@ I resin printed these. The files can be modified to suit different parts using a
 3D design application than can import an STL file.
 
 [Case Sides](https://github.com/MikeTheGent/Dual_Clock/blob/main/resources/Dual_Clock_Case_Sides.stl)
-[Case Back](https://github.com/MikeTheGent/Dual_Clock/blob/main/resources/Dual_Clock_Case_Back.stl)
 
-The case will need to be modified if you're not using exactly the same parts as me. (See 'Parts' above).
+[Case Back](https://github.com/MikeTheGent/Dual_Clock/blob/main/resources/Dual_Clock_Case_Back.stl)
 
 ## TFT_eSPI configutation
 
