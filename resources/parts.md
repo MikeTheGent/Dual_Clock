@@ -1,15 +1,41 @@
 # Parts list
 
-1. Waveshare ESP32 S3 Zero
-2. Neo 7M GPS receiver, external antenna option useful to get a signal indoors
-3. HT16K33 4 digit LED display
-4. 1.9", 170x320 pixel TFT display
-5. BH1750 light sensor (currently does nothing)
-6. ClosedCube HDC1080 temperature & humidity sensor
-7. Adafruit Perma-Proto Small Mint Tin Size Breadboard PCB
-8. Female headers
-9. 10cm/4" Male to Female DuPont cables
+## Suppliers
 
-In UK I buy parts from thepihut.com and eBay. The ClosedCube HDC1080 might be difficult
-to source outside UK and can be easily substituted with other I2C sensors. Just avoid the
-hopelessly inaccurate DHT11. Edit Sensors.cpp to suit your sensor.
+1. In the UK, [The Pi Hut](https://thepihut.com/)
+2. eBay
+3. [Aliexpress](https://www.aliexpress.com/) if you dare.
+
+## Waveshare ESP32 S3 Zero
+
+A useful little ESP32 board. Other smaller boards could be substituted. Larger ESP32
+boards could be used but would probably require a larger case. Waveshare parts
+are widely available.
+
+[Waveshare ESP32 S3 Zero](https://www.waveshare.com/wiki/ESP32-S3-Zero)
+
+## Neo 7M GPS receiver
+
+External antenna option useful to get a signal indoors.
+
+## HT16K33 4 digit LED display
+
+Available from the usual suspects including eBay.
+
+## 1.9", 170x320 pixel TFT display
+
+Available from Aliexpress & eBay.
+
+## BH1750 light sensor
+
+## ClosedCube HDC1080 temperature & humidity sensor
+
+Available from eBay in UK. Might be difficult to source outside UK and can be easily substituted with other I2C sensors. Just avoid the hopelessly inaccurate DHT11. 
+Edit Sensors.cpp to suit your sensor.
+
+## Adafruit Perma-Proto Small Mint Tin Size Breadboard PCB
+
+## Female headers
+
+## 10cm/4" Male to Female DuPont cables
+
