@@ -65,7 +65,7 @@ feature can be easily removed in main.cpp.
 
 ## Case
 
-!(https://github.com/MikeTheGent/Dual_Clock/blob/main/resources/Dual_Clock_case_1.jpeg) "Dual Clock Case"
+![Dual Clock Case](https://github.com/MikeTheGent/Dual_Clock/blob/main/resources/Dual_Clock_case_1.jpeg "Dual Clock Case")
 
 I have designed & prototyped a 3D printed open frame case. I will upload files 
 here once I have completed my clock and am satisfied the case has room for everything.
