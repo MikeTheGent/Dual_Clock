@@ -72,6 +72,8 @@ feature can be easily removed in main.cpp.
 I have designed & prototyped a 3D printed open frame case. I will upload files 
 here once I have completed my clock and am satisfied the case has room for everything.
 
+The case will need to be modified if you're not using exactly the same parts as me. (See 'Parts' above).
+
 ## TFT_eSPI configutation
 
 Move docs/User_Setup.h to your TFT_eSPI directory which will be somwhere in .pio/libdeps.
