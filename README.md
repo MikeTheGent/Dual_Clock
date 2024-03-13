@@ -38,7 +38,7 @@ was crashing.
 
 ## Parts
 
-[A detailed parts list](https://github.com/MikeTheGent/Dual_Clock/blob/main/resources/parts.md)
+Find the Parts List in the [Wiki](https://github.com/MikeTheGent/Dual_Clock/wiki)
 
 ## WiFi & Alexa
 
@@ -51,17 +51,8 @@ feature can be easily removed in main.cpp.
 
 ## Case
 
-![Dual Clock Case](https://github.com/MikeTheGent/Dual_Clock/blob/main/resources/Dual_Clock_case_1.jpeg "Dual Clock Case")
-
-![Dual Clock Case](https://github.com/MikeTheGent/Dual_Clock/blob/main/resources/Dual_Clock_case_2.jpeg "Dual Clock Case")
-
-I resin printed these in Sunlu ABS-Like. The files can be modified to suit different 
-parts using any 3D design application than can import an STL file. They can
-probably be easily adapted for FDM printing.
-
-[Case Sides](https://github.com/MikeTheGent/Dual_Clock/blob/main/resources/Dual_Clock_Case_Sides.stl)
-
-[Case Back](https://github.com/MikeTheGent/Dual_Clock/blob/main/resources/Dual_Clock_Case_Back.stl)
+You can download my case design from the
+[Wiki](https://github.com/MikeTheGent/Dual_Clock/wiki)
 
 ## TFT_eSPI configutation
 
