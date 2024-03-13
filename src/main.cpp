@@ -22,7 +22,7 @@ void onDisplayChange(bool state, unsigned char value);
 static void updateEnvironment(void);
 
 /*
-** Pins used for GPS Serial and I2C for other peripherals.
+** Pins used for GPS Serial UART and I2C for other peripherals.
 */
 
 static const uint8_t gpsRxPin = 7;
