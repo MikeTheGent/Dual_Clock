@@ -48,7 +48,7 @@ namespace TimeSource {
         onTimeChange = callback;
     }
 
-    void loop(void) {
+    void loop() {
         while (gps.available() > 0) {
             byte gpsData = gps.read();
             parser.encode(gpsData);
