@@ -34,7 +34,7 @@ namespace AlexaControl {
         onDisplayChange = callback;
     }
 
-    void loop(void) {
+    void loop() {
         fauxmo.handle();
     }
 }
