@@ -14,7 +14,7 @@ namespace ClockDisplay {
         HT16K33 display(0x70);
     }
 
-    void begin(void) {
+    void begin() {
         display.begin();
         switchDisplay(true, 128);
         display.setBlink(3);
