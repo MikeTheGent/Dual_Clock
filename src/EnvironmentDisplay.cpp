@@ -30,11 +30,11 @@ namespace EnvironmentDisplay {
         tft.setFreeFont(largeFont);
 
         tft.setCursor(10, 34);
-        tft.setTextColor(TFT_RED, backgroundColour);
+        tft.setTextColor(TFT_ORANGE, backgroundColour);
         tft.print("Temperature");
 
         tft.setCursor(10, 74);
-        tft.setTextColor(TFT_ORANGE, backgroundColour);
+        tft.setTextColor(TFT_CYAN, backgroundColour);
         tft.print("Humidity");
 
         tft.setCursor(10, 114);
@@ -59,7 +59,7 @@ namespace EnvironmentDisplay {
 
     void displayTemperature(float temperature) {
         tft.fillRect(220, 9, 99, 34, backgroundColour);
-        tft.setTextColor(TFT_RED, backgroundColour);
+        tft.setTextColor(TFT_ORANGE, backgroundColour);
         tft.setFreeFont(largeFont);
         tft.setCursor(220, 34);
         tft.printf("%.1f", temperature);
@@ -67,7 +67,7 @@ namespace EnvironmentDisplay {
     
     void displayHumidity(long humidity) {
         tft.fillRect(220, 49, 99, 34, backgroundColour);
-        tft.setTextColor(TFT_ORANGE, backgroundColour);
+        tft.setTextColor(TFT_CYAN, backgroundColour);
         tft.setFreeFont(largeFont);
         tft.setCursor(220, 74);
         tft.printf("%d%%", humidity);
