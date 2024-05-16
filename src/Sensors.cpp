@@ -18,7 +18,8 @@ namespace Sensors {
 
     bool begin() {
         hdc1080.begin(0x40);
-        hdc1080.setResolution(HDC1080_RESOLUTION_14BIT, HDC1080_RESOLUTION_14BIT);
+        hdc1080.setResolution(HDC1080_RESOLUTION_14BIT,
+            HDC1080_RESOLUTION_14BIT);
         return bh1750.begin(BH1750_TO_GROUND);
     }
 
@@ -35,3 +36,4 @@ namespace Sensors {
         return long(bh1750.getLux());
     }
 }
+
