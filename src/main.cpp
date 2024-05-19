@@ -30,7 +30,7 @@ static const uint8_t gpsTxPin = 8;
 static const int i2cSDA = 12;
 static const int i2cSCL = 13;
 
-static const char *alexaDeviceName = "Dual Clock";
+static const char *alexaDeviceName = "Red Clock";
 static unsigned long lastTimeUpdate = 0;
 static unsigned long nextSensorUpdate = 0;
 
